@@ -24,7 +24,7 @@ paintingsRouter.handlePaintingTitleName(paintingsNested, app);
 paintingsRouter.handlePaintingColorName(paintingsNested, app); 
 
 // Use express to listen to port 
-let port = 8080; 
+let port = process.env.PORT; 
 app.listen(port, () => { 
     console.log("Server running at port = " + port); 
 });
