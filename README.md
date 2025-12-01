@@ -35,7 +35,7 @@ https://comp3612-assignment-3.onrender.com/api/painting/color/kcvhvxchbkcj
 
 https://comp3612-assignment-3.onrender.com/api/artists 
 
-https://comp3612-assignment-3.onrender.com/api/artists/api/artists/FRANCE 
+https://comp3612-assignment-3.onrender.com/api/artists/FRANCE 
 
 https://comp3612-assignment-3.onrender.com/api/artists/france 
 
