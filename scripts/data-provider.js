@@ -1,7 +1,7 @@
 const path = require("path"); 
 const fs = require("fs");
 
-// for now, we will get our data by reading the provided json file
+// retrieve contents from a JSON file
 function getData(filename) {
     const file = filename; 
     const jsonPath = path.join(__dirname, '../data', file); 
@@ -10,7 +10,7 @@ function getData(filename) {
     return jsonParsed;
 } 
 
-// convert string data into JSON object 
+// get data from JSON
 const artists = getData('artists.json');
 const galleries = getData('galleries.json');
 const paintingsNested = getData('paintings-nested.json');

@@ -7,9 +7,13 @@ function handleAllPaintings(paintings, app) {
 function handlePaintingId(paintings, app) {
     app.get('/api/painting/:id', (req, resp) => {
         const id = parseInt(req.params.id);
-        const match = paintings.find(painting => painting.paintingID === id);
-        const responseJson = match ? match : jsonMessage(`Couldn't find a match for ${id}`);
-        resp.json(responseJson);
+        const matches = paintings.filter(painting => painting.paintingID === id);
+
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+        }
     });
 }
 
@@ -17,8 +21,12 @@ function handlePaintingGalleryId(paintings, app) {
     app.get('/api/painting/gallery/:id', (req, resp) => {
         const id = parseInt(req.params.id);
         const matches = paintings.filter(painting => painting.gallery.galleryID === id);
-        const responseJson = matches.length > 0 ? matches : jsonMessage(`Couldn't find a match for ${id}`)
-        resp.json(responseJson);
+
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+        }           
     });
 }
 
@@ -26,8 +34,12 @@ function handlePaintingArtistId(paintings, app) {
     app.get('/api/painting/artist/:id', (req, resp) => {
         const id = parseInt(req.params.id);
         const matches = paintings.filter(painting => painting.artist.artistID === id);
-        const responseJson = matches.length > 0 ? matches : jsonMessage(`Couldn't find a match for ${id}`)
-        resp.json(responseJson);
+        
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+        }
     });
 }
 
@@ -36,8 +48,12 @@ function handlePaintingMinMax(paintings, app) {
         const min = parseInt(req.params.min);
         const max = parseInt(req.params.max);
         const matches = paintings.filter(painting => painting.yearOfWork > min && painting.yearOfWork < max);
-        const responseJson = matches.length > 0 ? matches : jsonMessage(`Couldn't find a match for ${min} to ${max}`)
-        resp.json(responseJson);
+
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${min} to ${max}`));
+        }
     });
 }
 
@@ -45,8 +61,12 @@ function handlePaintingTitleName(paintings, app) {
     app.get('/api/painting/title/:text', (req, resp) => {
         const text = req.params.text.toLowerCase();
         const matches = paintings.filter(painting => painting.title.toLowerCase().includes(text));
-        const responseJson = matches.length > 0 ? matches : jsonMessage(`Couldn't find a match for ${text}`)
-        resp.json(responseJson);
+
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${text}`));
+        }
     });
 }
 
@@ -57,8 +77,12 @@ function handlePaintingColorName(paintings, app) {
             const dominateColors = painting.details.annotation.dominantColors;
             return dominateColors.find(color => color.name.toLowerCase() === name);
         });
-        const responseJson = matches.length > 0 ? matches : jsonMessage(`Couldn't find a match for ${name}`)
-        resp.json(responseJson);
+
+        if (matches.length > 0) {
+            resp.json(matches);
+        } else {
+            resp.json(jsonMessage(`Couldn't find a match for ${name}`));
+        }
     });
 }
 
