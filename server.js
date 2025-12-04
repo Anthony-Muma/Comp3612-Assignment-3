@@ -2,6 +2,8 @@ const express = require('express');
 
 // create an express app 
 const app = express();
+
+// get data
 const provider = require('./scripts/data-provider.js');
 const { artists, galleries, paintingsNested } = provider;
 
@@ -23,7 +25,7 @@ paintingsRouter.handlePaintingMinMax(paintingsNested, app);
 paintingsRouter.handlePaintingTitleName(paintingsNested, app); 
 paintingsRouter.handlePaintingColorName(paintingsNested, app); 
 
-// Use express to listen to port 
+// use express to listen to port 
 let port = process.env.PORT; 
 app.listen(port, () => { 
     console.log("Server running at port = " + port); 

@@ -12,7 +12,7 @@ function handlePaintingId(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+            resp.json(jsonMessage(`Couldn't find a match for id '${id}'`));
         }
     });
 }
@@ -25,7 +25,7 @@ function handlePaintingGalleryId(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+            resp.json(jsonMessage(`Couldn't find a match for id '${id}'`));
         }           
     });
 }
@@ -38,7 +38,7 @@ function handlePaintingArtistId(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${id}`));
+            resp.json(jsonMessage(`Couldn't find a match for id '${id}'`));
         }
     });
 }
@@ -52,7 +52,7 @@ function handlePaintingMinMax(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${min} to ${max}`));
+            resp.json(jsonMessage(`Couldn't find a match for years between '${min}' to '${max}'`));
         }
     });
 }
@@ -65,7 +65,7 @@ function handlePaintingTitleName(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${text}`));
+            resp.json(jsonMessage(`Couldn't find a match for titles with '${text}'`));
         }
     });
 }
@@ -81,7 +81,7 @@ function handlePaintingColorName(paintings, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for ${name}`));
+            resp.json(jsonMessage(`Couldn't find a match for color '${name}'`));
         }
     });
 }
