@@ -11,7 +11,7 @@ function handleArtistsCountry(artists, app) {
         if (matches.length > 0) {
             resp.json(matches);
         } else {
-            resp.json(jsonMessage(`Couldn't find a match for country '${country}'`));
+            resp.json(jsonMessage(`Couldn't find a match with country '${country}'`));
         }
     });
 }
