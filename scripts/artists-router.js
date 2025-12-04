@@ -1,4 +1,4 @@
-const jsonMessage = require('./json-message.js');
+const jsonMessage = require('./json-message');
 
 function handleAllArtists(artists, app) {
     app.get('/api/artists', (req, resp) => {resp.json(artists)});

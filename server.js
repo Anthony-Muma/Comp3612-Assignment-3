@@ -4,11 +4,11 @@ const express = require('express');
 const app = express();
 
 // get data
-const provider = require('./scripts/data-provider.js');
+const provider = require('./scripts/data-provider');
 const { artists, galleries, paintingsNested } = provider;
 
 // set up route handling 
-const artistRouter = require('./scripts/artists-router.js'); 
+const artistRouter = require('./scripts/artists-router'); 
 artistRouter.handleAllArtists(artists, app); 
 artistRouter.handleArtistsCountry(artists, app); 
 

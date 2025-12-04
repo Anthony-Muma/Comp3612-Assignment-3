@@ -1,4 +1,4 @@
-const jsonMessage = require('./json-message.js');
+const jsonMessage = require('./json-message');
 
 function handleAllGalleries(galleries, app) {
     app.get('/api/galleries', (req, resp) => {resp.json(galleries)});
